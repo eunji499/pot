@@ -1,0 +1,58 @@
+:root{ 
+    /* 화면에 따른 수치 */
+    --basic-font-pc:20px;
+    --basic-font-tab:18px;
+    --basic-font-mo:14px;
+
+    /* 글씨 크기 */
+    --fs-h1:1.601rem;
+    --fs-h2:1.423rem;
+    --fs-h3:1.265rem;
+    --fs--h4:1.125rem;
+    --fs--bd1:1rem;
+    --fs-bd2:0.875rem;
+    --fs-det:0.765rem;
+
+    /* 글씨 굵기 */
+    --fw-reg:300;
+    --fw-med:500;
+    --fw-bold:600;
+    --fw-samibold:800;
+
+    /* 색상 */
+    /* main->500 / sub -> 300,900 */
+    --pm-color-0:#F5F8FF;
+    --pm-color-100:#C5D9FD;
+    --pm-color-200:#98BAF9;
+    --pm-color-300:#709EF2;
+    --pm-color-400:#5086E9;
+    --pm-color-500:#3872DD;
+    --pm-color-600:#2761CD;
+    --pm-color-700:#1B52B8;
+    --pm-color-800:#1344A0;
+    --pm-color-900:#0E3887;
+
+    /* main->400 */
+    --pi-color-0:#FFF6DE;
+    --pi-color-100:#FFDB81;
+    --pi-color-200:#FDCB4C;
+    --pi-color-300:#FBC02C;
+    --pi-color-400:#FFB800;
+    --pi-color-500:#F0B00D;
+    --pi-color-600:#E6A706;
+    --pi-color-700:#D79B02;
+    --pi-color-800:#C18A00;
+    --pi-color-900:#A67700;
+   
+    /* 여백 */
+    --space-small:0.5rem;
+    --space-normal:1rem;
+    --space-large:2rem;
+    --space-x-large:3rem;
+    --space-2x-large:4rem;
+    --space-3x-large:6rem;
+    
+
+}
+
+
