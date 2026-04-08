@@ -5,7 +5,7 @@ body, html {
     width: 100%;
     height: 100%;
     font-family: 'Escoredream',sans-serif;
-    background-color: #FAF6ED;
+    background-color: #ECF6F7;
     margin-top: 6rem;
  }
 
@@ -24,15 +24,14 @@ body, html {
     left: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: blur(10px); /* 가우시안 블러 값 조절 */
-    pointer-events: none; /* 오버레이가 마우스 이벤트를 막지 않도록 함 */
+    backdrop-filter: blur(10px); 
+    pointer-events: none; 
 }
 
 .hero{
-    /* border: 1px solid red; */
     height: 100vh;
     min-height: 700px;
-    /* background: ; */
+   
 
 }
 .common-fram {
@@ -75,16 +74,8 @@ figure .look {
     align-items: center;
 }
 
-figure .pp{
-    /* position: relative; */
-    /* top: -600px; */
-    
-}
 .about-text {
     width: auto;
-    /* position: absolute; */
-    /* top: 1550px; */
-    /* left: calc(100vh - 700px); */
     margin-top: 2rem;
     text-align: center;
 }
@@ -125,19 +116,9 @@ button img{
     border-bottom: 1px solid #BE3734;
     padding-bottom: 5rem;
     padding: 0 17rem 5rem;
-    /* width: 80%; */
+
 }
-.grid-text .text1{
-    /* width: 500px; */
-    /* padding-left: 4rem; */
-    
-}
-.grid-text .text2{
-    /* width: 800px; */
-    /* padding-left: 2rem; */
-    
-    
-}
+
 
 .grid-text h4{
     font-size: 2.5rem;
@@ -155,21 +136,22 @@ button img{
     font-weight: 400;
     font-size: 0.8rem;
 }
-.about-me {
+.lace-style{
     border: 1px solid red;
-    background: url(../img/paiper1.png) no-repeat 50% 50% / 100% 100%;
-    padding: 6rem 0;
+    padding: 90px 90px;
+    background: 
+    url(../img/left-corner.png) no-repeat 0% 0%,
+    url(../img/right-lace.png) repeat-y 100% 0%,
+    url(../img/down-lace.png) repeat-x 0% 100%,
+    url(../img/left-lace.png) repeat-y 0% 0%,
+    url(../img/up-lace.png) repeat-x 0% 0%;
 }
 
 /* CSS 그리드 시스템 적용 영역 */
 .skills-grid {
-    /* position: absolute; */
-    /* top: 2550px; */
     display: grid;
     grid-template-columns: repeat(3, minmax(320px, 1fr));
     gap: 40px 100px;
-    /* left: calc(100vh - 555px); */
-    margin-top: 6rem;
     padding: 2rem 17rem;
 }
 
@@ -228,172 +210,19 @@ button img{
 
 .skills-section h2{
     font-size: 2.5rem;
-    /* position: absolute; */
-    /* top: 2500px; */
-    /* left: calc(100vh - 700px); */
-    padding-left: 4rem;
+    padding-left: 17rem;
     padding-top: 2rem;
     color: #BE3734;
 }
 
 
-@media(max-width: 1720px){ 
-    .common-fram{
-        width: 952px;}
-    .hero-text h1 {
-        font-size: 10rem;}
-    .about-text {
-        width: 853px;
-        top: 1507px;
-        left: calc(100vh - 491px);
-}
-    figure .pp img{
-        height: 1000px;
-    }
-
-    figure .pp img {
-    width: 100%;
-    height: 1950px;}
-
-    .grid-text .text1{
-    width: 350px;
-    padding-left: 3rem;}
-
-    .grid-text .text2{
-    width: 350px;}
-    .skills-section h2 {
-        top: 2470px;
-        left: calc(100vh - 503px);
-}
-    .skills-grid {
-        top: 2500px;
-        left: calc(100vh - 446px);
-        gap: 40px 80px;
-        grid-template-columns: none;
-}
-    #pull{
-        grid-column: none;}
-
-    figure .look {
-        width: 80px;}
-}
+@media(max-width: 1720px){ }
+   
 
 
-@media(max-width: 1440px){
-    .common-fram{
-        width: 952px;}
-    .hero-text h1 {
-        font-size: 10rem;}
-    .about-text {
-        width: 853px;
-        top: 1800px;
-        left: calc(100vh - 811px);}
-    figure .pp img{
-        height: 1000px;
-    }
+@media(max-width: 1440px){}
+   
 
-    figure .pp img {
-    width: 100%;
-    height: 1950px;}
-
-    .grid-text .text1{
-    width: 350px;
-    padding-left: 3rem;}
-
-    .grid-text .text2{
-    width: 350px;}
-    .skills-section h2 {
-        top: 2770px;
-        left: calc(100vh - 811px);}
-    .skills-grid {
-        top: 2800px;
-        left: calc(100vh - 765px);
-        gap: 40px 80px;
-        grid-template-columns:none;
-}
-    #pull{
-        grid-column: none;}
-
-    figure .look {
-        width: 80px;}
-}
-
-
-@media(max-width: 768px){
-    body, html {
-        margin-top: 3rem;}
-    .common-fram{
-        width: 374px;}
-    .hero-text h1 {
-        font-size: 6rem;}
-    .hero-text h2 {
-        font-size: 5rem;
-        line-height: 100%;}
-    .hero-text h5 {
-        font-size: 1rem;}
-    figure .key {
-        top: 62%;
-        left: 22%;
-        rotate: 90deg;
-        width: 300px;}
-    .about-text {
-        width: 320px;
-        top: 1210px;
-        left: calc(100vh - 838px);}
-    .about-text h2 {
-        font-size: 4rem;}
-    .about-text h5 {
-        font-size: 0.8rem;
-        text-align: start;}
-    .about-text button {
-        width: 200px;}
-    .grid-text {
-        text-align: start;
-        display:grid;
-        grid-template-columns: none;
-        gap: 2rem;
-        border-bottom: 1px solid #BE3734;
-        padding-bottom: 5rem;
-}
-    .grid-text .text1 {
-        width: 320px;
-        padding-left: 0.5rem;
-        
-    }
-   .grid-text .text2 {
-        width: 320px;
-        padding-left: 0.5rem;
-}
-    figure .look {
-        margin: 350px auto;
-}
-    figure .pp {
-        top: -325px;
-    }
-    figure .pp img {
-        height: 3400px;
-}
-    .skills-section h2 {
-        top: 2480px;
-        left: calc(100vh - 884px);
-    }
-    .skills-grid {
-        top: 2465px;
-        left: calc(100vh - 813px);
-        display: flow-root;
-        gap: 2rem;
-}
-    .skill-content{
-        width: 200px;
-    }
-    .skill-level-labels {
-        width: 200px;
-}
-    .progress-track {
-        width: 200px;
-    }
-    .skill-card {
-        margin-top: 2rem;
-    }
-}
+@media(max-width: 768px){}
+  
 
