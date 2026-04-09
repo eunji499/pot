@@ -33,13 +33,32 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Angkor&display=swap" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="./js/index.js"></script>
+
 </head>
 <body>
+
+     <header id="main-header">
+        <nav>
+            <ul>
+                <li><a href="#home">HOME</a></li>
+                <li><a href="#popup">POPUP</a></li>
+                <li><a href="#banner">BANNER</a></li>
+                <li><a href="#poster">POSTER</a></li>
+                <li><a href="#detailed-page">DETAILED PAGE</a></li>
+                <li><a href="#web-design">WEB DESIGN</a></li>
+                <li><a href="#package">PACKAGE</a></li>
+                <li><a href="#mat-painting">MAT PAINTING</a></li>
+            </ul>
+        </nav>
+    </header>
 
     <!-- <canvas id="distortionCanvas"></canvas>
     <div id="blurOverlay"></div>
     <script src="./js/index.js"></script> -->
-
+    <!-- 히어로 섹션 -->
     <div class="hero">
         <div class="common-fram">
             <div class="hero-text">
@@ -52,9 +71,109 @@
             <figure>
                 <div class="key"><img src="./img/key2.png" alt="열쇠"></div>
             </figure>
+           
+
+    <!-- 버튼 레이아웃  -->
+   <h1 class="welcome-title alex">Welcome</h1>
+    <div class="envelope-area">
+        <img src="./img/pop.png" alt="White Envelope" class="envelope-image">
+    </div>
+    <div class="button-container">
+        <button class="welcome-btn" id="btnConcept">Concept</button>
+        <button class="welcome-btn" id="btnColorsFonts">Colors And Fonts</button>
+    </div>
+
+    <div class="modal-overlay" id="modalConcept">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 class="modal-title alex">Concept</h2>
+                <button class="close-btn" id="closeConcept">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="concept-item">
+                    <h3>[Scorpio]</h3>
+                    <p>전갈은 어떤 환경에서도 살아 남고, 목표를 놓치지 않는다는 점을 가지고 있습니다.<br>이 집요함을 저의 성격과 디자인 태도로 보여주는 하나의 요소로 잡았습니다.</p>
+                </div>
+                <div class="concept-item">
+                    <h3>[Key]</h3>
+                    <p>문제(자물쇠) 앞에서 정확하게 맞물리는 해결사가 되겠다는 포부를 가지고 있습니다.<br>전갈과 열쇠를 결합하여 뜨거운 열정으로 해결책을 만들기 위해 노력하는 사람이라는 의미를 담았습니다.</p>
+                </div>
+                <div class="concept-item">
+                    <h3>[Lace]</h3>
+                    <p>촘촘한 레이스의 성질이 전갈자리의 집요함과 레이스의 디테일함을 합쳐 감각과 구조를 동시에 다룰 수 있다는 메시지를 담았습니다.</p>
+                </div>
+                
+                <div class="visual-equation">
+                    <div class="icon-circle"><img src="./img/scorpio.png" alt="Scorpio"></div>
+                    <span class="math-symbol">+</span>
+                    <div class="icon-circle"><img src="./img/key-icon.png" alt="Key"></div>
+                    <span class="math-symbol">+</span>
+                    <div class="icon-circle"><img src="./img/pp-icon.png" alt="Lace"></div>
+                    <span class="math-symbol">→</span>
+                    <div class="icon-circle"><img src="./img/hu-icon.png" alt="Person"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-overlay" id="modalColorsFonts">
+        <div class="modal-box">
+            <div class="modal-header">
+                <h2 class="modal-title alex">Font</h2>
+                <button class="close-btn" id="closeColorsFonts">&times;</button>
+            </div>
+            
+            <div class="modal-body">
+                <div class="font-row">
+                    <div class="font-label">Point</div>
+                    <div class="font-preview preview-alex">Scorpio</div>
+                    <div class="font-line"></div>
+                    <div class="font-name">[Alex Brush]</div>
+                    <div class="font-desc">"디자인 요소 간의 균형과 디테일을 통해 완성도 높은 UI를 구현합니다. 단순한 미적 표현을 넘어, 브랜드 가치를 전달하는 디자인을 만듭니다."</div>
+                </div>
+                <div class="font-row">
+                    <div class="font-label">Main</div>
+                    <div class="font-preview preview-angkor">Scorpio</div>
+                    <div class="font-line"></div>
+                    <div class="font-name">[Angkor]</div>
+                    <div class="font-desc">"디자인 요소 간의 균형과 디테일을 통해 완성도 높은 UI를 구현합니다. 단순한 미적 표현을 넘어, 브랜드 가치를 전달하는 디자인을 만듭니다."</div>
+                </div>
+                <div class="font-row">
+                    <div class="font-label"></div> <div class="font-preview preview-suit">Scorpio</div>
+                    <div class="font-line"></div>
+                    <div class="font-name">[SUIT]</div>
+                    <div class="font-desc">"디자인 요소 간의 균형과 디테일을 통해 완성도 높은 UI를 구현합니다. 단순한 미적 표현을 넘어, 브랜드 가치를 전달하는 디자인을 만듭니다."</div>
+                </div>
+
+                <div class="modal-header">
+                    <h2 class="modal-title alex">Color</h2>
+                </div>
+                
+                <div class="color-section">
+                    <div class="color-item">
+                        <div class="color-circle circle-point">Point</div>
+                        <p class="color-desc">"디자인 요소 간의 균형과 디테일을 통해 완성도 높은 UI를 구현합니다. 단순한 미적 표현을 넘어, 브랜드 가치를 전달하는 디자인을 만듭니다."</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circle circle-typo">Typography</div>
+                        <p class="color-desc">"디자인 요소 간의 균형과 디테일을 통해 완성도 높은 UI를 구현합니다. 단순한 미적 표현을 넘어, 브랜드 가치를 전달하는 디자인을 만듭니다."</p>
+                    </div>
+                    <div class="color-item">
+                        <div class="color-circle circle-bg">Background</div>
+                        <p class="color-desc">"디자인 요소 간의 균형과 디테일을 통해 완성도 높은 UI를 구현합니다. 단순한 미적 표현을 넘어, 브랜드 가치를 전달하는 디자인을 만듭니다."</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
             <figure>
                 <div class="look"><img src="./img/look1.png" alt="자물쇠"></div>
             </figure>
+
+            <!-- 어바웃 미 -->
             <div class="about-me lace-style">
                 <div class="about-text">
                     <h2 class="alex">About  me</h2>
@@ -270,9 +389,66 @@
                     </div>
                 </div>
             </div>
+</div>
+    <!-- 팝업 진열 -->
+    <section class="popup-section">
+       <h2 class="popup-title alex">POPUP</h2>
 
+        <div class="line-container" id="elasticLineContainer">
+            <svg id="elasticSvg" width="100%" height="100px" preserveAspectRatio="none">
+                <path id="elasticPath" width="100vh" stroke="#cc3a3a" stroke-width="1" fill="none" />
+            </svg>
         </div>
-    </div>
+
+        <div class="intro-box">
+            <p>오늘 하루는 생각보다 별일 없이 지나간 것 같다가도, <br>괜히 한 번 더 보게 된 색감 같은 것들. </p>
+        </div>
+
+        <div class="portfolio-block">
+            <div class="portfolio-info">
+                <h3><span class="info-title-text">블랙프라이데이 1</span> <img src="./img/ribon-icon.png" alt="리본" class="title-icon"></h3>
+                <p class="info-desc-text">첫 번째 블랙프라이데이 상품을 홍보하기 위하여 제작하였습니다. 시선을 사로잡는 네온 컬러를 활용했습니다.</p>
+            </div>
+            <div class="portfolio-images">
+                <img src="./img/poster1.png" alt="포스터 1" class="clickable-poster active" 
+                     data-title="블랙프라이데이 1" 
+                     data-desc="첫 번째 블랙프라이데이 상품을 홍보하기 위하여 제작하였습니다. 시선을 사로잡는 네온 컬러를 활용했습니다.">
+                     
+                <img src="./img/poster2.png" alt="포스터 2" class="clickable-poster" 
+                     data-title="나이키 에어포스" 
+                     data-desc="나이키 에어포스 프로모션을 위한 팝업 디자인입니다. 깔끔한 화이트 톤으로 신발을 강조했습니다.">
+                     
+                <img src="./img/poster3.png" alt="포스터 3" class="clickable-poster" 
+                     data-title="크리스마스 스페셜" 
+                     data-desc="크리스마스 시즌 한정 상품을 위한 포스터입니다. 따뜻한 연말 분위기를 연출하기 위해 레드와 그린을 매치했습니다.">
+            </div>
+        </div>
+
+        <div class="lace-divider"></div>
+        <div class="portfolio-block">
+            <div class="portfolio-info">
+                <h3><span class="info-title-text">블랙프라이데이 1</span> <img src="./img/ribon-icon.png" alt="리본" class="title-icon"></h3>
+                <p class="info-desc-text">첫 번째 블랙프라이데이 상품을 홍보하기 위하여 제작하였습니다. 시선을 사로잡는 네온 컬러를 활용했습니다.</p>
+            </div>
+            <div class="portfolio-images">
+                <img src="./img/popup4.png" alt="포스터 1" class="clickable-poster active" 
+                     data-title="블랙프라이데이 1" 
+                     data-desc="첫 번째 블랙프라이데이 상품을 홍보하기 위하여 제작하였습니다. 시선을 사로잡는 네온 컬러를 활용했습니다.">
+                     
+                <img src="./img/popup5.png" alt="포스터 2" class="clickable-poster" 
+                     data-title="나이키 에어포스" 
+                     data-desc="나이키 에어포스 프로모션을 위한 팝업 디자인입니다. 깔끔한 화이트 톤으로 신발을 강조했습니다.">
+                     
+                <img src="./img/popup6.png" alt="포스터 3" class="clickable-poster" 
+                     data-title="크리스마스 스페셜" 
+                     data-desc="크리스마스 시즌 한정 상품을 위한 포스터입니다. 따뜻한 연말 분위기를 연출하기 위해 레드와 그린을 매치했습니다.">
+            </div>
+        </div>
+        <div class="lace-divider"></div>
+        
+    </section>
+        
+    
 
 </body>
 

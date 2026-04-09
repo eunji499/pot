@@ -1,12 +1,7 @@
 
-body, html {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    font-family: 'Escoredream',sans-serif;
+html {
+    font-family: 'Suit',sans-serif;
     background-color: #ECF6F7;
-    margin-top: 6rem;
  }
 
  #distortionCanvas {
@@ -28,9 +23,56 @@ body, html {
     pointer-events: none; 
 }
 
+ /* 헤더 */
+        header {
+            position: fixed; 
+            top: 40px; 
+            left: 50%; 
+            transform: translateX(-50%); 
+            padding: 12px 40px; 
+            
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(12px); 
+            -webkit-backdrop-filter: blur(12px); 
+            
+            border: 1px solid rgba(255, 255, 255, 0.4); 
+            border-radius: 50px; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
+            
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+        }
+
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            white-space: nowrap;
+        }
+
+        header nav ul li {
+            margin: 0 18px; 
+        }
+
+        header nav ul li a {
+            text-decoration: none;
+            color: #2D2928; 
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+
+        header nav ul li a:hover {
+            color: #BE3734; }
+
 .hero{
     height: 100vh;
     min-height: 700px;
+    margin-top: 12rem;
    
 
 }
@@ -63,7 +105,7 @@ body, html {
 }
 figure .key{
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 70%;
 }
 
@@ -96,13 +138,24 @@ figure .look {
 }
 
 .about-text button{
-    margin: 5rem 0;
-    width: 300px;
-    font-size: 1rem;
-    padding: 0.5rem 60px;
-    border-radius: 50px;
-    border: 1px solid #2D2928;
-    background-color: #BE3734;
+   appearance: none; 
+            -webkit-appearance: none; 
+            -moz-appearance: none;
+            outline: none; 
+            box-shadow: none; 
+            background: none; 
+            margin: 0;
+            background-color: #ECF6F7; 
+            border: 1px solid #2D2928; 
+            border-radius: 50px;
+            padding: 1rem 4rem; 
+            color: #2D2928; 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+            cursor: pointer; 
+            transition: all 0.3s ease;
 }
 button img{
     height: 20px;
@@ -208,12 +261,427 @@ button img{
             grid-column: 2/4;
         }
 
-.skills-section h2{
-    font-size: 2.5rem;
-    padding-left: 17rem;
-    padding-top: 2rem;
-    color: #BE3734;
+        .skills-section h2{
+            font-size: 2.5rem;
+            padding-left: 17rem;
+            padding-top: 2rem;
+            color: #BE3734;
+        }
+
+
+
+ /* 웰컴 페이지  */
+        .welcome-title {
+            color: #BE3734;
+            font-size: 9rem;
+            margin-bottom: 4rem;
+            text-align: center;
+            margin-top: 45rem;
 }
+        .envelope-area {
+            position: relative; 
+            margin-bottom: 5rem;
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+        .envelope-image { width: 320px; 
+            height: auto; 
+            filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.03)); }
+        .key-icon { 
+            position: absolute; 
+            bottom: -15px; 
+            right: -25px; 
+            width: 75px; 
+            height: auto; 
+            transform: rotate(20deg); }
+        .button-container {
+            display: flex;
+            gap: 5rem;
+            align-items: center;
+            justify-content: center;
+}
+        /* 버튼 스타일 */
+        .welcome-btn {
+            appearance: none; 
+            -webkit-appearance: none; 
+            -moz-appearance: none;
+            outline: none; 
+            box-shadow: none; 
+            background: none; 
+            margin: 0;
+            background-color: #ECF6F7; 
+            border: 1px solid #2D2928; 
+            border-radius: 50px;
+            padding: 1rem 4rem; 
+            color: #2D2928; 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.85rem; 
+            font-weight: 600; 
+            letter-spacing: 0.5px;
+            cursor: pointer; 
+            transition: all 0.3s ease;
+        }
+        .welcome-btn:hover { 
+            background-color: #BE3734; 
+            border-color: #2D2928; 
+            color: #ffffff; }
+        #btnConcept{
+            width: 250px;
+        }
+        /* 모달 공통 스타일 */
+        .modal-overlay {
+            position: fixed; 
+            top: 0; 
+            left: 0; 
+            width: 100%; 
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            opacity: 0; 
+            visibility: hidden; 
+            transition: all 0.4s ease; z-index: 1000;
+        }
+        .modal-box {
+            background-color: #ffffff; 
+            width: 1000px; 
+            max-width: 95%; 
+            padding: 3rem 4rem; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transform: translateY(50px); 
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            max-height: 90vh; overflow-y: auto; 
+        }
+        .modal-overlay.active { opacity: 1; 
+            visibility: visible; }
+        .modal-overlay.active .modal-box { transform: translateY(0); }
+
+        /* 모달 헤더 (타이틀 & 닫기 버튼) */
+        .modal-header {
+            display: flex;
+            justify-content: space-between; 
+            align-items: center;
+            border-bottom: 1px solid #BE3734; 
+            padding-bottom: 0.5rem; 
+            margin-bottom: 2.5rem;
+        }
+        .modal-title { color: #BE3734; 
+            font-size: 3.5rem; 
+         }
+        .close-btn { background: none; 
+            border: none; 
+            font-size: 2rem; 
+            color: #BE3734; 
+            cursor: pointer; 
+            font-weight: bold; 
+            line-height: 1; }
+
+        /* 첫 번째 모달 (Concept)  */
+        .concept-item { margin-bottom: 2rem; }
+        .concept-item h3 { 
+            font-size: 1.1rem; 
+            color: #2D2928; 
+            margin-bottom: 0.5rem; 
+            font-weight: 600; }
+        .concept-item p { 
+            font-size: 0.95rem; 
+            color: #2D2928; 
+            line-height: 1.6; 
+            word-break: keep-all; }
+        .visual-equation { display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            gap: 1.5rem; 
+            margin-top: 4rem; }
+        .icon-circle { 
+            width: 110px; 
+            height: 110px; 
+            border: 1px solid #BE3734; 
+            border-radius: 50%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; }
+        .icon-circle img { 
+            max-width: 60%; 
+            max-height: 60%; }
+        .math-symbol { 
+            color: #BE3734; 
+            font-size: 1.5rem; 
+            font-weight: bold; }
+
+        /* 두 번째 모달 (Colors And Fonts) */
+        
+        .font-row {
+            display: flex; 
+            align-items: center; 
+            margin-bottom: 2rem; 
+            gap: 3.5rem;
+        }
+        .font-label { 
+            width: 40px; 
+            font-size: 0.85rem; 
+            font-weight: bold; 
+            color: #2D2928; 
+            text-align: right; }
+        .font-preview { 
+            width: 140px; 
+            font-size: 2.5rem; 
+            color: #BE3734; }
+        
+        /* 개별 폰트 적용 */
+        .preview-alex { font-family: 'Alex Brush', cursive; font-size: 3.5rem; } 
+        .preview-angkor { font-family: 'Angkor', serif; }
+        .preview-suit { font-family: 'SUIT', sans-serif; color: #2D2928; font-weight: 500; }
+        
+        /* 선 및 끝의 동그라미(점)*/
+        .font-line { 
+            flex-grow: 1; 
+            height: 1px; 
+            background-color: #888; 
+            position: relative; 
+        }
+        .font-line::after { 
+            content: ''; 
+            position: absolute; 
+            right: -2px; 
+            top: -2px; 
+            width: 5px; 
+            height: 5px; 
+            border-radius: 50%; 
+            background-color: #2D2928; 
+        }
+        
+        .font-name { 
+            width: 120px; 
+            font-weight: bold;
+             font-size: 1.1rem; 
+             color: #2D2928; 
+             font-family: 'Montserrat', sans-serif; }
+        .font-desc { 
+            width: 280px; 
+            font-size: 0.85rem;
+             color: #2D2928; 
+             word-break: keep-all; }
+
+        /* Color 섹션 */
+        .color-section {
+            display: flex; 
+            justify-content: space-between; 
+            margin-top: 3rem; 
+            gap: 2rem;
+        }
+        .color-item {
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            text-align: center; 
+            width: 30%;
+        }
+        .color-circle {
+            width: 150px; 
+            height: 150px; 
+            border-radius: 50%; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            font-size: 1.1rem; 
+            font-weight: 500; 
+            font-family: 'Montserrat', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+        /* 개별 원 색상 */
+        .circle-point { background-color: #BE3734; color: #ffffff; }
+        .circle-typo { background-color: #2D2928; color: #ffffff; }
+        .circle-bg { background-color: #ECF6F7; color: #2D2928; } 
+        
+        .color-desc { 
+            font-size: 0.85rem; 
+            color: #2D2928; 
+            word-break: keep-all; }
+
+
+
+
+/* 팝업 영역 */
+        
+        .popup-section {
+            margin: 10rem auto; 
+            
+            
+        }
+
+        .popup-title {
+            color: #BE3734;
+            font-size: 6.5rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
+            margin-top: 25rem;
+            padding-left: 6rem;
+        }
+
+         .intro-box {
+            padding: 2.5rem 6rem;
+            margin-bottom: 5rem;
+            position: relative; 
+            z-index: 1; 
+        }
+
+
+        .intro-box p {
+            color: #2D2928;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            font-weight: 500;
+        }
+
+        /* 포트폴리오 블록 (하늘색 배경 영역) */
+        .portfolio-block {
+            height: 300px;
+            background-color: #D7E8F5; 
+            display: flex; 
+            justify-content: space-between;
+            align-items: center;
+            padding: 4rem 6rem;
+            gap: 4rem; 
+        }
+
+        /* 왼쪽 텍스트 */
+        .portfolio-info {
+            flex: 1; 
+        }
+
+        .portfolio-info h3 {
+            font-size: 1.6rem;
+            color: #2D2928;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 800;
+        }
+
+        .title-icon {
+            width: 30px; 
+            height: auto;
+        }
+
+        .portfolio-info p {
+            color: #2D2928;
+            font-size: 0.95rem;
+            line-height: 1.8;
+        }
+
+        /* 포스터 이미지 영역 */
+        .portfolio-images {
+            flex: 2.5; 
+            display: flex;
+            gap: 1.5rem; 
+            justify-content: flex-end;
+        }
+
+        .portfolio-images img {
+            width: 30%; 
+            height: auto;
+            object-fit: cover; 
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15); 
+        }
+
+        /* 하단 레이스 장식 영역 */
+        .lace-divider {
+            height: 35px; 
+            width: 100%;
+            background-image: url('../img/down-lace.png'); 
+            background-repeat: repeat-x; 
+            background-size: contain;
+            margin-bottom: 4rem; 
+        }
+
+        /* 클릭 가능한 포스터 스타일 */
+        .clickable-poster {
+            cursor: pointer; 
+            transition: all 0.3s ease;
+            border: 3px solid transparent; 
+            border-radius: 8px; 
+        }
+
+       
+        .clickable-poster:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(0,0,0,0.2);
+        }
+
+        /* 클릭 활성화 포스터의 스타일 */
+        .clickable-poster.active {
+            transform: scale(1.02); 
+        }
+
+
+        /* 선 컨테이너 스타일 */
+        .line-container {
+            width: 100%;
+            height: 100px; 
+            margin-top: -20px; 
+            margin-bottom: -50px; 
+            position: relative;
+            z-index: 10;
+        }
+
+        #elasticSvg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 @media(max-width: 1720px){ }
