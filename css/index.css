@@ -144,11 +144,11 @@ figure .look {
             outline: none; 
             box-shadow: none; 
             background: none; 
-            margin: 0;
+            margin: 2rem 0;
             background-color: #ECF6F7; 
             border: 1px solid #2D2928; 
             border-radius: 50px;
-            padding: 1rem 4rem; 
+            padding: 0.5rem 6rem; 
             color: #2D2928; 
             font-family: 'Montserrat', sans-serif;
             font-size: 0.85rem; 
@@ -156,6 +156,13 @@ figure .look {
             letter-spacing: 0.5px;
             cursor: pointer; 
             transition: all 0.3s ease;
+}
+
+
+.about-text button:hover{
+    background-color: #BE3734; 
+            border-color: #2D2928; 
+            color: #ffffff;
 }
 button img{
     height: 20px;
@@ -504,8 +511,18 @@ button img{
 
 
 
-/* 팝업 영역 */
-        
+/* 팝업 영역 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
+      /* 모든 탄성 선의 기본 색상 지정 */
+.elastic-path {
+    stroke: #BE3734; 
+    stroke-width: 1px; /* 선의 굵기도 여기서 조절 가능합니다 */
+    transition: stroke 0.3s ease; /* 색상이 바뀔 때 부드럽게 변하도록 애니메이션 추가 */
+}
+
+/* 특정 클래스가 붙은 경우 다른 색상 적용 */
+.point-color .elastic-path {
+    stroke: #BE3734;
+}  
         .popup-section {
             margin: 10rem auto; 
             
@@ -595,7 +612,7 @@ button img{
             background-image: url('../img/down-lace.png'); 
             background-repeat: repeat-x; 
             background-size: contain;
-            margin-bottom: 4rem; 
+            margin-bottom: 12rem; 
         }
 
         /* 클릭 가능한 포스터 스타일 */
@@ -634,16 +651,125 @@ button img{
             display: block;
         }
 
-      
+      #block2{
+        margin-top: 20rem;
+      }
 
 
 
 
+/* 포스터------------------------------------------------------------------------------------------------------------------------------------------------------------------------ */
+       
 
+        /* 전체 레이아웃 컨테이너 */
+        .gallery-container {
+        display: flex;
+        /* box-shadow: 0 10px 30px rgba(0,0,0,0.1); */
+        border-radius: 12px;
+        padding: 20px; 
+        margin: 0 6rem;
+        
+}
 
+        /* 왼쪽 포스터 슬라이드 영역 */
+        .sliders-area {
+            display: flex;
+            width: 60%;
+            height: 100%;
+            gap: 15px;
+            padding: 20px;
+            background: #ECF6F7;
+        }
 
+        /* 개별 포스터 기둥 (왼쪽, 오른쪽) */
+        .slider-column {
+            flex: 1;
+            height: 100%;
+            overflow: hidden; /* 영역 밖으로 나가는 이미지 숨김 */
+            position: relative;
+        }
 
+        /* 애니메이션이 적용되는 긴 트랙 */
+        .slider-track {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            /* 무한 스크롤 애니메이션 적용 */
+            animation: scrollUp linear infinite;
+        }
 
+        /* 마우스를 올리면 애니메이션 일시 정지 (클릭하기 쉽게) */
+        .slider-track:hover {
+            animation-play-state: paused;
+        }
+
+        /* 핵심 포인트: 좌우 스크롤 속도 다르게 설정 */
+        .left-column .slider-track { animation-duration: 20s; } /* 왼쪽은 20초마다 1사이클 */
+        .right-column .slider-track { animation-duration: 25s; } /* 오른쪽은 25초마다 1사이클 (더 느림) */
+
+        /* 스크롤 애니메이션 키프레임 */
+        @keyframes scrollUp {
+            0% { transform: translateY(0); }
+            /* 트랙 높이의 딱 절반만큼만 올리면, 복제된 이미지가 자연스럽게 이어집니다 */
+            100% { transform: translateY(-50%); } 
+        }
+
+        /* 포스터 이미지 스타일 */
+        .poster {
+            width: 100%;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* 포스터에 마우스를 올렸을 때의 효과 */
+        .poster:hover {
+            transform: scale(1.03);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* 오른쪽 설명 영역 */
+        .info-area {
+            width: 40%;
+            height: 500px;
+            padding: 50px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #e3f2fd;
+            margin-top: 1.2rem;
+        }
+
+        #info-title {
+            font-size: 28px;
+            font-weight: 800;
+            color: #1e293b;
+            margin-bottom: 20px;
+            word-break: keep-all;
+        }
+
+        #info-desc {
+            font-size: 16px;
+            color: #475569;
+            line-height: 1.7;
+            word-break: keep-all;
+        }
+/* 3. 오른쪽 설명 영역 수정: Sticky 속성 추가 (가장 핵심!) */
+.info-area {
+    width: 40%;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: #e3f2fd;
+    border-radius: 8px;
+    margin-left: 20px; /* 왼쪽 포스터 영역과 간격 띄우기 */
+
+    /* 💡 스크롤 따라다니기 마법 */
+    position: sticky; 
+    top: 50px; /* 브라우저 화면 위에서 50px 위치에 도달하면 고정! */
+    height: fit-content; /* 자신의 텍스트 내용만큼만 높이를 가짐 */
+}
 
 
 
